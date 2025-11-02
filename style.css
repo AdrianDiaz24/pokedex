@@ -11,14 +11,20 @@ body {
 .pokedex {
     background-color: #fff;
     border-radius: 15px;
-    width: 320px;
+    width: 360px;
     padding: 20px;
     text-align: center;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 h1 {
     color: #e3350d;
     margin-bottom: 20px;
+    margin-top: 0;
+}
+
+.search-container {
+    position: relative;
 }
 
 .search-box {
@@ -28,26 +34,50 @@ h1 {
 }
 
 input {
-    padding: 8px;
+    padding: 10px;
     border: 2px solid #e3350d;
     border-radius: 8px;
-    width: 60%;
-
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 16px;
 }
 
-button {
-    background-color: #e3350d;
-    color: white;
-    border: none;
+/* Ocultamos el botón de buscar original */
+#searchBtn {
+    display: none;
+}
+
+#searchResults {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 0 0;
+    position: absolute;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 8px 12px;
-    cursor: pointer;
-    transition: 0.2s;
+    max-height: 250px;
+    overflow-y: auto;
+    z-index: 10;
+    display: none; /* Oculto por defecto */
 }
 
-button:hover {
-    background-color: #c62828;
+#searchResults li {
+    padding: 12px;
+    cursor: pointer;
+    text-align: left;
+    text-transform: capitalize;
+    border-bottom: 1px solid #eee;
 }
+
+#searchResults li:last-child {
+    border-bottom: none;
+}
+
+#searchResults li:hover {
+    background-color: #f4f4f4;
+}
+
 
 .pokemon-info {
     margin-top: 20px;
@@ -57,6 +87,22 @@ button:hover {
 .pokemon-info img {
     width: 120px;
     height: 120px;
+}
+
+#backBtn {
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+#backBtn:hover {
+    background-color: #555;
 }
 
 .error {
