@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokédex</title>
+    <title>Buscador Pokédex</title>
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <div class="pokedex">
-    <h1>Pokedex</h1>
-    <div class="search-box">
-        <input type="text" id="pokemonName" placeholder="Ingresa el nombre del Pokémon" />
-        <button id="searchBtn">Buscar</button>
+    <h1>Buscador Pokédex</h1>
+    
+    <div class="search-container">
+        <div class="search-box">
+            <input type="text" id="pokemonName" placeholder="Escribe el nombre del Pokémon" />
+        </div>
+        <ul id="searchResults"></ul>
     </div>
 
     <div class="pokemon-info" id="pokemonInfo">
@@ -19,6 +22,7 @@
         <h2 id="pokemonTitle"></h2>
         <p>Altura: <span id="pokemonHeight"></span></p>
         <p>Peso: <span id="pokemonWeight"></span></p>
+        <button id="backBtn">Volver</button>
     </div>
 
     <p class="error" id="errorMsg"></p>
